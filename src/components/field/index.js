@@ -39,6 +39,7 @@ function errorStateFromProps(props, state) {
 
 export default class TextField extends PureComponent {
   static defaultProps = {
+    allowFontScaling: true,
     underlineColorAndroid: 'transparent',
     disableFullscreenUI: true,
     autoCapitalize: 'sentences',
@@ -67,6 +68,8 @@ export default class TextField extends PureComponent {
 
   static propTypes = {
     ...TextInput.propTypes,
+
+    allowFontScaling: PropTypes.boolean,
 
     animationDuration: PropTypes.number,
 
@@ -496,6 +499,7 @@ export default class TextField extends PureComponent {
     let offset = this.labelOffset();
 
     let {
+      allowFontScaling,
       label,
       fontSize,
       labelFontSize,
@@ -505,6 +509,7 @@ export default class TextField extends PureComponent {
     return (
       <Label
         {...props}
+        allowFontScaling={allowFontScaling}
         fontSize={fontSize}
         activeFontSize={labelFontSize}
         offset={offset}

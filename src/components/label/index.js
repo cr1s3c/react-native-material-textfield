@@ -12,6 +12,8 @@ export default class Label extends PureComponent {
   };
 
   static propTypes = {
+    allowFontScaling: PropTypes.boolean,
+
     numberOfLines: PropTypes.number,
 
     disabled: PropTypes.bool,
@@ -49,6 +51,7 @@ export default class Label extends PureComponent {
 
   render() {
     let {
+      allowFontScaling,
       label,
       offset,
       disabled,
@@ -111,7 +114,7 @@ export default class Label extends PureComponent {
 
     return (
       <Animated.View style={[styles.container, containerStyle]}>
-        <Animated.Text style={[styles.text, style, textStyle]} {...props}>
+        <Animated.Text allowFontScaling={allowFontScaling} style={[styles.text, style, textStyle]} {...props}>
           {label}
         </Animated.Text>
       </Animated.View>
