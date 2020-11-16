@@ -12,7 +12,7 @@ export default class Label extends PureComponent {
   };
 
   static propTypes = {
-    allowFontScaling: PropTypes.boolean,
+    allowFontScaling: PropTypes.bool,
 
     numberOfLines: PropTypes.number,
 

@@ -6,6 +6,8 @@ import styles from './styles';
 
 export default class Helper extends PureComponent {
   static propTypes = {
+    allowFontScaling: PropTypes.bool,
+
     title: PropTypes.string,
     error: PropTypes.string,
 
@@ -64,6 +66,7 @@ export default class Helper extends PureComponent {
   render() {
     let { errored, opacity } = this.state;
     let {
+      allowFontScaling,
       style,
       title,
       error,
@@ -89,7 +92,7 @@ export default class Helper extends PureComponent {
     };
 
     return (
-      <Animated.Text style={[styles.text, style, textStyle]}>
+      <Animated.Text allowFontScaling={allowFontScaling} style={[styles.text, style, textStyle]}>
         {text}
       </Animated.Text>
     );

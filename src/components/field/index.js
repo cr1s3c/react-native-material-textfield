@@ -69,7 +69,7 @@ export default class TextField extends PureComponent {
   static propTypes = {
     ...TextInput.propTypes,
 
-    allowFontScaling: PropTypes.boolean,
+    allowFontScaling: PropTypes.bool,
 
     animationDuration: PropTypes.number,
 
@@ -563,6 +563,7 @@ export default class TextField extends PureComponent {
     let { focusAnimation, error } = this.state;
 
     let {
+      allowFontScaling,
       title,
       disabled,
       baseColor,
@@ -594,6 +595,7 @@ export default class TextField extends PureComponent {
 
     let helperProps = {
       ...styleProps,
+      allowFontScaling,
       title,
       error,
       disabled,
